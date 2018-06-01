@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #
-  post 'sign_up', to: 'registrations#create'
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      post 'sign_up', to: 'registrations#create'
+    end
+  end
 end
