@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       post 'sign_up', to: 'registrations#create'
+      post 'sign_in', to: 'seasons#create'
     end
   end
 end
