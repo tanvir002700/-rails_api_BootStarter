@@ -3,8 +3,9 @@ class AuthorizeApiRequest
     @headers = headers
   end
 
-  # Service entry point - return valid user object
   def call
+    puts headers
+    puts headers['Authorization'].present?
     {
       user: user
     }

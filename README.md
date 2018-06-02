@@ -35,3 +35,10 @@ curl -d '{"name": "test", "email": "test@test.com", "password": "1234567", "pass
      -H "Content-Type: application/json" \
      -X POST \
    http://localhost:3000/api/v1/sign_up/
+
+curl -d '{"post": {"name": "test"}}' \
+     -H "Content-Type: application/json" \
+     -H "Authorization: token"\
+     -X POST \
+     http://localhost:3000/posts/
+{"id":20,"name":"test","description":null,"created_at":"2018-06-02T06:06:36.708Z","updated_at":"2018-06-02T06:06:36.708Z"}% 
