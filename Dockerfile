@@ -19,3 +19,10 @@ COPY ./config/database.yml.docker ./config/database.yml
 EXPOSE 3000
 
 CMD rails s -b 0.0.0.0
+
+
+# docker build -t api .
+# docker network create api
+# docker run -d -e POSTGRES_USER=$POSTGRES_USER -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD --net=api --name db postgres
+# docker run -it -e POSTGRES_USER=$POSTGRES_USER -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD --net=api -p 3000:3000 --name app api
+
