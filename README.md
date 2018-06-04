@@ -1,29 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## setup
+docker build -t api .
 
-Things you may want to cover:
+docker network create api
 
-* Ruby version
+docker run -d -e POSTGRES_USER='api' -e POSTGRES_PASSWORD='api' --net=api --name db postgres
 
-* System dependencies
+docker run -it -e POSTGRES_USER='api' -e POSTGRES_PASSWORD='api' --net=api api rake db:setup
 
-* Configuration
+docker run -it -e POSTGRES_USER='api' -e POSTGRES_PASSWORD='api' --net=api -p 3000:3000 --name app api
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-api call
+## api call
 
 curl -d '{"email": "test@test", "password": "1234567"}' \
      -H "Content-Type: application/json" \
@@ -41,4 +29,3 @@ curl -d '{"post": {"name": "test"}}' \
      -H "Authorization: token"\
      -X POST \
      http://localhost:3000/posts/
-{"id":20,"name":"test","description":null,"created_at":"2018-06-02T06:06:36.708Z","updated_at":"2018-06-02T06:06:36.708Z"}% 
