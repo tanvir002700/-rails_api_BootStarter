@@ -28,4 +28,19 @@ curl -d '{"post": {"name": "test"}}' \
      -H "Content-Type: application/json" \
      -H "Authorization: token"\
      -X POST \
-     http://localhost:3000/posts/
+     http://localhost:3000/api/v1/posts/
+
+curl -H "Content-Type: application/json" \
+     -H "Authorization: token"\
+     -X GET \
+     http://localhost:3000/api/v1/posts/
+
+curl -d '{"post": {"name": "test"}}' \
+     -H "Content-Type: application/json" \
+     -H "Authorization: token"\
+     -X PUT \
+     http://localhost:3000/api/v1/posts/:id
+
+curl -H "Authorization: token"\
+     -X DELETE \
+     http://localhost:3000/api/v1/posts/:id
