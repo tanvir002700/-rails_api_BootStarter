@@ -13,6 +13,7 @@ docker run -it -e POSTGRES_USER='api' -e POSTGRES_PASSWORD='api' --net=api -p 30
 
 ## api call
 
+```
 curl -d '{"email": "test@test", "password": "1234567"}' \
      -H "Content-Type: application/json" \
      -X POST \
@@ -44,3 +45,4 @@ curl -d '{"post": {"name": "test"}}' \
 curl -H "Authorization: token"\
      -X DELETE \
      http://localhost:3000/api/v1/posts/:id
+```
