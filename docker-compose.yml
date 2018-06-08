@@ -15,7 +15,7 @@ services:
     build: .
     env_file: .env
     volumes:
-      - .:/usr/src/app
+      - .:/usr/src/app:rw
     ports:
       - "3000:3000"
     depends_on:
